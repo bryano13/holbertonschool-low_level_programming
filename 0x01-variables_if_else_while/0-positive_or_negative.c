@@ -1,14 +1,12 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
 /*
- * main -  generate a random number and validates its sign
+ * main - generate a random number and validates its sign
  *
  * Return: If i zero then the function runs correctly.
  *
  */
-
 int main(void)
 {
 	int n;
