@@ -1,6 +1,12 @@
 #include <stdio.h>
 
-/*Program that prints a string with printf"*/
+/**
+ * main - Entry point
+ *
+ *printf - prints text
+ *
+ * Return: Always 0 (Success)
+ */
 
 int main(void)
 {
