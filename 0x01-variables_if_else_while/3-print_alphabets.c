@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
-*main - print lowercase a-z
+*main - print lowercase and uppercase alpahbet.
 *Return: Always 0 (Success)
 */
 
@@ -15,7 +15,7 @@ int main(void)
 		putchar(lower);
 		lower++;
 	}
-	while (upper <= 'A')
+	while (upper <= 'Z')
 	{
 		putchar(upper);
 		upper++;
