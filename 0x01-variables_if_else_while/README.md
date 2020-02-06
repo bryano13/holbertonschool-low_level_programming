@@ -1,0 +1,1 @@
+Printf and variables in c language
