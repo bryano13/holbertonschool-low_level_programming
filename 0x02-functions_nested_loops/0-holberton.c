@@ -15,7 +15,6 @@ int main(void)
 	_putchar('l');
 	_putchar('b');
 	_putchar('e');
-	_putchar('l');
 	_putchar('r');
 	_putchar('t');
 	_putchar('o');
