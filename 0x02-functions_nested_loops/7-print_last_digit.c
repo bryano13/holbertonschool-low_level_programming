@@ -14,6 +14,6 @@ int print_last_digit(int n)
 	{
 		module = module * -1;
 	}
-	_putchar = (module + '0');
+	_putchar(module + '0');
 	return (module);
 }
