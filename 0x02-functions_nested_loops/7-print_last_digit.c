@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "holberton.h"
 /**
 *print_last_digit - prints last digit of an int.
