@@ -7,8 +7,8 @@
 */
 int print_last_digit(int n)
 {
-	int module; 
-	
+	int module;
+
 	module = n % 10;
 	if (module < 0)
 	{
