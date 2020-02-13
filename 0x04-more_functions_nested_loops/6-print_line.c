@@ -2,8 +2,9 @@
 
 /**
   * print_line - draws a straight line in the terminal.
-  * Return: always 0.
+  * .
   * @n: number of lines printed.
+  * Return: Nothing.
   */
 
 void print_line(int n)
