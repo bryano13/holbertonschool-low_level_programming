@@ -1,23 +1,32 @@
 #include "holberton.h"
 
 /**
- * _strlen - returns the length of a string
- * @s: string
- * Return: length
-*/
+ * rev_string - prints an string in reverse
+ * @s: input string to print reverse
+ * Return: none
+ */
 
 void rev_string(char *s)
 {
-	int i, j;
 	char tmp;
+	int i;
+	int j;
+	int k;
 
-	for (i = 0; s[i] != '\0'; i++)
+	j = 0;
+
+	while (s[i] != '\0')
 	{
+		i++;
 	}
-	for (j = i; s[j] >= 0; j--)
+	k = i - 1; /*Here is stored the second last position of the array*/
+
+	while (j < k)
 	{
-		tmp = *(s + i);
-		*(s + i) = *(s + j);
-		*(s + j) = tmp;
+		tmp = s[j];
+		s[j] = s[k];
+		s[k] = tmp;
+		j++;
+		k--;
 	}
 }
