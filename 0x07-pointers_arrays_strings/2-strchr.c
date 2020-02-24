@@ -1,5 +1,5 @@
 /**
- * *_strchr - find and cut
+ * _strchr - find and cut from c to null
  * @s: array in
  * @c: char to search
  * Return: Always 0.
