@@ -1,19 +1,20 @@
 /**
-* _strchr - function that locates a char in string
-* @s: given string
-* @c: character to locate on string
-* Return: return pointer to points a position of char
-*/
+ * *_strchr - find and cut
+ * @s: array in
+ * @c: char to search
+ * Return: Always 0.
+ */
+
 char *_strchr(char *s, char c)
 {
-	int i;
+	int j = 0;
 
-	i = 0;
-	while (s[i] != '\0')
+	while (2)
 	{
-		if (s[i] == c)
-			return (&s[i]);
-		i++;
+		if (s[j] == c)
+			return (s + j);
+		if (s[j] == '\0')
+			return (NULL);
+	j++;
 	}
-	return ('\0');
 }
