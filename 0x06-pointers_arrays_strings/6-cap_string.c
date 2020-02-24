@@ -1,25 +1,32 @@
-
 /**
- * cap_string - Capitalize every word in a string
-* @s: String to capitalize words of
- *
-* Return: Pointer to string
+ * cap_string - Program that capitalizes a string
+ * @c: given string
+ * Return: String cap
  */
-char *cap_string(char *s)
+char *cap_string(char *c)
 {
-    int i = 0;
-    
-    for (i = 0; s[i] != '\0'; i++)
-    {
-        if (s[i] == '\t')
-                s[i] = 32;
-        if (s[i] >= 'a' && s[i] <= 'z')
-        {
-            if (i == 0)
-                s[i] = s[i] - 32;
-            else if (s[i-1] == 32 || s[i-1] == '{' || s[i-1] == '}' || s[i-1] == '"' || s[i-1] == ';' || s[i-1] == ',' || s[i-1] == '!' || s[i-1] == '?' || s[i-1] == '(' || s[i-1] == ')' || s[i - 1] == '\t' || s[i-1] == '.')
-                s[i] = s[i] - 32;
-        }
-    }
-    return (s);
+	int upper;
+	int i;
+	int j;
+	char s[] = {" \t\n,;.!?\"(){}"};
+
+	i = 0;
+	upper = 1;
+	while (c[i] != '\0')
+	{
+		if ((c[i] >= 97 && c[i] <= 122) && upper == 1)
+		{
+			c[i] = c[i] - 32;
+		}
+		upper = 0;
+		for (j = 0; j < 12; j++)
+		{
+			if (c[i] == s[j])
+			{
+				upper = 1;
+			}
+		}
+		i++;
+	}
+	return (c);
 }
