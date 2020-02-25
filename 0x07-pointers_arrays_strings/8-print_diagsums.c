@@ -1,30 +1,27 @@
 #include <stdio.h>
+
 /**
-* _strpbrk -  function locates the first occurrence in the string s
-* @s: given string
-* @accept: substring to compare
-* Return: pointer ptr with address of first match
-*/
-char *_strpbrk(char *s, char *accept)
+ * print_diagsums - Print the sums of the two diagnols of a matrix
+ * @a: The matrix
+ * @size: The length of the arrays
+ */
+
+void print_diagsums(int *a, int size)
 {
 	int i;
-	int j;
-	char *ptr;
+	int sum1, sum2;
+	int len;
 
 	i = 0;
-	while (s[i] != '\0')
+	sum1 = sum2 = 0;
+	len = size * size;
+	while (i < len)
 	{
-		j = 0;
-		while (accept[j] != '\0')
-		{
-			if (s[i] == accept[j])
-			{
-				ptr = &s[i];
-				return (ptr);
-			}
-			j++;
-		}
+		if (i % (size - 1) == 0 && i < len - 1 && i > 0)
+			sum2 += *(a + i);
+		if (i % (size + 1) == 0 || i == 0)
+			sum1 += *(a + i);
 		i++;
 	}
-	return (0);
+	printf("%d, %d\n", sum1, sum2);
 }
