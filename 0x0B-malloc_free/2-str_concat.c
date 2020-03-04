@@ -1,81 +1,43 @@
 #include "holberton.h"
-unsigned int size_s1(char *s1);
-unsigned int size_s2(char *s2);
+#include <stdlib.h>
 /**
- * str_concat - concatenate 2 strings
- * @s1: first string
- * @s2: second string
- * Return: concat pointer if succes otherwise NULL
+ * str_concat - Function that concatenates two string.
+ * @s1: String to concatenate.
+ * @s2: String to concatenate.
+ * Return: Pointer to an string.
  */
+
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int size1, size2, k;
-	char *concat;
+	int i = 0, j = 0, k;
+	char *la;
 
-	if (s1 == NULL)
+	if (s1)
 	{
-		s1 = malloc(1);
-		*s1 = '\0';
+		while (s1[i] != '\0')
+			i++;
 	}
-	if (s2 == NULL)
+	if (s2)
 	{
-		s2 = malloc(1);
-		*s2 = '\0';
+		while (s2[j] != '\0')
+			j++;
+		j++;
 	}
-	size1 = size_s1(s1);
-	size2 = size_s2(s2);
-	concat = malloc(sizeof(char) * (size1 + size2 + 1));
-	if (concat == NULL)
-	{
+
+	la = malloc((i + j) * sizeof(char)); /*reserve the space of memory*/
+
+	if (!la)
 		return (NULL);
-	}
-	else
+
+	for (k = 0; k < (i + j); k++)
 	{
-		for (k = 0; k < (size1 + size2 + 1); k++)
+		if (k < i)
+			la[k] = s1[k];
+		else if (k >= i && k < (i + j))
 		{
-			if (k < size1)
-			{
-				concat[k] = s1[k];
-			}
-			else if (k < (size1 + size2))
-			{
-				concat[k] = s2[k - size1];
-			}
-			else
-			{
-				concat[k] = '\0';
-			}
+			la[k] = s2[k - i];
 		}
-		return (concat);
 	}
-}
-/**
- * size_s1 - find the size of string 1
- * @s1: first string
- * Return: size of string (i)
- */
-unsigned int size_s1(char *s1)
-{
-	unsigned int i;
-
-	for (i = 0; s1[i] != '\0'; i++)
-	{
-		;
-	}
-	return (i);
-}
-/**
- * size_s2 - find the size of string 2
- * @s2: second string
- * Return: size of string (j)
- */
-unsigned int size_s2(char *s2)
-{
-	unsigned int j;
-
-	for (j = 0; s2[j] != '\0'; j++)
-	{
-		;
-	}
-	return (j);
+	la[k] = '\0';
+	return (la);
 }
