@@ -30,15 +30,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (n < j)
 		j = n;
 	/* Reserve me some space for my new string on the dynamic memory (heap)*/
-	concat = malloc((j + i) * sizeof(char));
+	concat = malloc((j + i) * sizeof(char) + 1);
+	if (concat == NULL)
+		return (NULL);
 	{
 		for (sum = 0; sum < i; sum++)
-		{
 			concat[sum] = s1[sum];
-		}
-		/*sum++;*/
-		for (k = 0; k <= j; k++, sum++)
+		for (k = 0; k < j; k++, sum++)
 			concat[sum] = s2[k];
+
+		concat [sum] = '\0';
 	}
 	return (concat);
 }
