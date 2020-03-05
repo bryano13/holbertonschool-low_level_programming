@@ -39,7 +39,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		for (k = 0; k < j; k++, sum++)
 			concat[sum] = s2[k];
 
-		concat [sum] = '\0';
+		concat[sum] = '\0';
 	}
 	return (concat);
 }
