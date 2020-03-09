@@ -1,11 +1,27 @@
 #include "dog.h"
-
+#include <stdlib.h>
+#include <stdio.h>
 /**
- * new_dog -
- *
- * Return: 
+ * print_dog - Prints nill if null
+ * @d: pointer to the structure addresss
+ * Return: void
  */
-dog_t *new_dog(char *name, float age, char *owner)
+void print_dog(struct dog *d)
 {
 
+	if (d)
+	{
+		if (d->name)
+			printf("Name: %s\n", d->name);
+		else
+			printf("Name: (nill)\n");
+		if (d->age)
+			printf("Age: %s\n", d->age);
+		else
+			printf("Age: (nill)\n");
+		if (d->Owner)
+			printf("Owner: %s\n", d->owner);
+		else
+			printf("Owner: (nill)\n");
+	}
 }
