@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "dog.h"
 /*Prototype of the function strcopy*/
-char * _strcopy(char *dest, char *str);
+char *_strcopy(char *dest, char *str);
 /**
 * new_dog - function that creates a new dog.
 * @name: new name
@@ -57,7 +57,7 @@ dog_t *new_dog(char *name, float age, char *owner)
   * @str: string that gets copied in dest.
   * Return: dest.
   */
-char * _strcopy(char *dest, char *str)
+char *_strcopy(char *dest, char *str)
 {
 	int i;
 
