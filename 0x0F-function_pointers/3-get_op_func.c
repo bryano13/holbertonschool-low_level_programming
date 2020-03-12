@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include "3-calc.h"
 /**
@@ -5,23 +6,22 @@
  * @s: operator
  * Return: pointer to operation function
  */
-
-op_t ops[] = {
-        {"+", op_add},
-        {"-", op_sub},
-        {"*", op_mul},
-        {"/", op_div},
-        {"%", op_mod},
-        {NULL, NULL}
-    };
-
 int (*get_op_func(char *s))(int, int)
 {
+	op_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}
+	};
 	int i;
 
-	for (i = 0; i < 5 && *s != *ops[i].op; i++)
+	i = 0;
+	while (i < 4 && *s != *ops[i].op)
 	{
-		/*stops i when the one of the characters is found*/
+		i++;
 	}
 	if (s == NULL || s[1] != '\0' || *s != *ops[i].op)
 	{
