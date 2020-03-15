@@ -31,14 +31,14 @@ void print_string(va_list str_numbers)
 void print_all(const char * const format, ...)
 {
 	int i = 0;
-	int j = 0;
+	int j;
 	va_list str_numbers;
 
 	f_t formats[] = {
 		{"c", print_chars},
 		{"i", print_integers},
 		{"f", print_floats},
-		{"s", print_strings},
+		{"s", print_string},
 		{NULL, NULL}
 	};
 
