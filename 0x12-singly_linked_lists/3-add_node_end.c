@@ -1,65 +1,54 @@
 #include "lists.h"
+int _strlen(const char *s);
 
 /**
- *put_node - adds node at end of list and return
- *pointer to origin
- *@head: pointer to the pointer of the list
- *@new_node: str data to add
- *@old_clone: old data copy with original address
- *Return: none
+ * add_node_end - function that adds a node at the end
+ * @head: head of the list
+ * @str: String of the instance
+ * Return: new list
  */
-void put_node(list_t **head, list_t *new_node, list_t *old_clone)
-{
-	if (*head == NULL)
-	{
-		*head = new_node;
-	}
-	else
-	{
-		while (*head != NULL)
-		{
-			if ((*head)->next == NULL)
-			{
-				(*head)->next = new_node;
-				(*head) = old_clone;
-				break;
-			}
-			*head = (*head)->next;
-		}
-	}
-}
-/**
- *add_node_end - adds new node at end of list
- *@head: pointer to the pointer of the list
- *@str: str data to add
- *Return: pointer to the new element of list
- */
+
 list_t *add_node_end(list_t **head, const char *str)
 {
-	int len_str = 0;
-	list_t *new_node, *old_clone;
-	char *final = NULL;
+	list_t *new;
+	list_t *temporal = *head;
 
-	if (head == NULL)
-		return (NULL);
-	if (str != NULL)
+	new = malloc(sizeof(list_t));
+	if (new == NULL)
 	{
-		final = strdup(str);
-		if (final == NULL)
-			return (NULL);
-		while (final[len_str])
-			len_str++;
+		return (NULL);
 	}
-	new_node = malloc(sizeof(list_t));
-	if (new_node == NULL)
-		return (NULL);
-	old_clone = malloc(sizeof(list_t));
-	if (old_clone == NULL)
-		return (NULL);
-	old_clone = *head;
-	new_node->str = final;
-	new_node->len = len_str;
-	new_node->next = NULL;
-	put_node(head, new_node, old_clone);
-	return (new_node);
+	new->str = strdup(str);
+	new->len = _strlen(str);
+	new->next = NULL;
+
+	if (*head == NULL)
+	{
+		*head = new;
+		return (new);
+	}
+	while (temporal->next !=  NULL)
+		temporal = temporal->next;
+
+	temporal->next = new;
+
+	return (new);
+}
+
+/**
+ * _strlen - function that returns the length of a string.
+ * @s: string
+ * Return: length of string
+ **/
+
+int _strlen(const char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
