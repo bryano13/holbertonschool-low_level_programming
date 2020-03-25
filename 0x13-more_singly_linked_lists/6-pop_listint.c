@@ -1,18 +1,16 @@
 #include "lists.h"
 
 /**
- * pop_listint -
- *
- * Return: 
+ * pop_listint - Delete the first node after extracting its value.
+ * @head: Pointer to the first node.
+ * Return: value from first node.
  */
 int pop_listint(listint_t **head)
 {
-	/*Extract the integer value from the head node and then delete that first node*/
-
 	listint_t *tmp;
 	int n;
 
-	if (head == NULL)
+	if (*head == NULL)
 		return (0);
 
 	tmp = *head;
