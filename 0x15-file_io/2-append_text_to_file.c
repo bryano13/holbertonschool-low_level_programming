@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+  * append_text_to_file - Append text.
+  * @filename: File
+  * @text_content: text.
+  * Return: integer.
+  */
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd, len;
@@ -17,6 +23,6 @@ int append_text_to_file(const char *filename, char *text_content)
 		write(3, text_content, len);
 	}
 	else
-		close (fd);
+		close(fd);
 		return (1);
 }
