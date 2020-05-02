@@ -1,11 +1,28 @@
 #include "lists.h"
 
 /**
- * add_dnodeint -
- *
- * Return: 
+ * add_dnodeint - add a new node
+ * @head: head pointer
+ * @n: int
+ * Return: pointer to new node
  */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
+	dlistint_t *new;
 
+	new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
+	{
+		return (NULL);
+	}
+	new->n = n;
+	if (*head == NULL)
+	{
+		new->next = NULL;
+		*head = new;
+		return (new);
+	}
+	new->next = *head;
+	*head = new;
+	return (new);
 }
