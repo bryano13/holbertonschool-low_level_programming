@@ -22,5 +22,6 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 		tranv = tranv->next;
 		count++;
 	}
-	return (NULL);
+	if (index > count)
+		return (NULL);
 }
